@@ -8,8 +8,8 @@
     <string name="total">মোট</string>
     <string name="single_die">একটি ছক্কা</string>
     <plurals name="dice_count">
-        <item quantity="one">%d টি ছক্কা</item>
-        <item quantity="other">%d টি ছক্কা</item>
+        <item quantity="one">%s টি ছক্কা</item>
+        <item quantity="other">%s টি ছক্কা</item>
     </plurals>
     <string name="history">রোলের ইতিহাস</string>
     <string name="history_empty">এখনও কোনো রোল নেই</string>

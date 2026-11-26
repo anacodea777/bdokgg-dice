@@ -164,7 +164,7 @@ class MainActivity : AppCompatActivity(), SensorEventListener {
 
     private fun updateCount() {
         val n = diceView.count
-        countText.text = resources.getQuantityString(R.plurals.dice_count, n, n)
+        countText.text = resources.getQuantityString(R.plurals.dice_count, n, n.toString())
         minusButton.isEnabled = n > 1
         plusButton.isEnabled = n < DiceView.MAX_DICE
     }

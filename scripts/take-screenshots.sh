@@ -18,7 +18,7 @@ adb shell settings put global animator_duration_scale 1
 
 # Clean status bar.
 adb shell settings put global sysui_demo_allowed 1
-demo() { adb shell am broadcast -a com.android.systemui.demo -e command "$@" >/dev/null; }
+demo() { adb shell am broadcast -a com.android.systemui.demo -e command "$@" | grep -v "^Broadcasting" || true; }
 clean_status_bar() {
   demo enter
   demo clock -e hhmm 0930
@@ -26,6 +26,11 @@ clean_status_bar() {
   demo network -e wifi show -e level 4 -e mobile show -e datatype none -e level 4
   demo notifications -e visible false
 }
+
+# SystemUI may still be starting right after boot; give it time, then check.
+sleep 10
+echo "sysui_demo_allowed=$(adb shell settings get global sysui_demo_allowed)"
+clean_status_bar
 
 # Re-apply demo mode before every shot: SystemUI sometimes drops it.
 shot() { sleep "${2:-1}"; clean_status_bar; sleep 0.3; adb exec-out screencap -p > "$OUT/$1.png"; echo "saved $1"; }
@@ -53,15 +58,15 @@ find_view() {
 
 tap() { local xy; xy=$(find_view "$@"); adb shell input tap $xy; }
 
-# Tap ROLL and grab frames while the dice are still in the air. Tap and screencap
-# run in one on-device shell so the delay is as short as possible.
+# Tap ROLL and grab a burst of frames while the dice are in the air. Tap and
+# screencap run in one on-device shell so the delay is as short as possible.
+# Frames are saved as <name>_f1..f6; pick the best one by eye.
 roll_and_capture() {
   local xy; xy=$(find_view rollButton)
   clean_status_bar
-  adb shell "input tap $xy; sleep 0.15; screencap -p /sdcard/a.png; screencap -p /sdcard/b.png"
-  adb pull /sdcard/a.png "$OUT/$1.png" >/dev/null
-  adb pull /sdcard/b.png "$OUT/$1_b.png" >/dev/null
-  echo "saved $1 (+ _b)"
+  adb shell "input tap $xy; for i in 1 2 3 4 5 6; do screencap -p /sdcard/f\$i.png; done"
+  for i in 1 2 3 4 5 6; do adb pull "/sdcard/f$i.png" "$OUT/$1_f$i.png" >/dev/null; done
+  echo "saved $1 frames"
 }
 
 launch() {

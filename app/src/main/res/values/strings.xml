@@ -10,8 +10,8 @@
     <string name="single_die">One die</string>
     <string name="dash" translatable="false">–</string>
     <plurals name="dice_count">
-        <item quantity="one">%d die</item>
-        <item quantity="other">%d dice</item>
+        <item quantity="one">%s die</item>
+        <item quantity="other">%s dice</item>
     </plurals>
     <string name="history">ROLL HISTORY</string>
     <string name="history_empty">No rolls yet</string>
