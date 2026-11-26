@@ -98,8 +98,8 @@ adb shell pm clear "$PKG" >/dev/null
 # ---- English ----
 adb shell cmd locale set-app-locales "$PKG" --locales en
 launch
-sleep 5
-dismiss_anr
+# The launcher often shows an ANR dialog right after a cold boot; clear it.
+for i in 1 2 3; do sleep 5; dismiss_anr; done
 shot 01_home_en 3
 
 roll_and_capture 02_rolling_en

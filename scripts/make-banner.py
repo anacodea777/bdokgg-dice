@@ -58,6 +58,7 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--font", default="C:/Windows/Fonts/segoeui.ttf")
     ap.add_argument("--font-bold", default="C:/Windows/Fonts/segoeuib.ttf")
+    ap.add_argument("--font-bengali", default="C:/Windows/Fonts/Nirmala.ttc")
     ap.add_argument("--shots", nargs=3, default=["07_result_bn.png", "05_six_dice_en.png", "02_rolling_en.png"],
                     help="left, right and centre screenshot")
     args = ap.parse_args()
@@ -81,10 +82,12 @@ def main():
     y += 180
     cx = x
     for label in ("1–6 dice", "Roll sound", "No permissions", "English + বাংলা"):
-        try:
-            f = chip if label.isascii() else ImageFont.truetype("C:/Windows/Fonts/Nirmala.ttc", 27)
-        except OSError:
-            f = chip
+        f = chip
+        if any("ঀ" <= c <= "৿" for c in label):  # Bengali needs a font that has it
+            try:
+                f = ImageFont.truetype(args.font_bengali, 27, index=1)
+            except OSError:
+                pass
         tw = d.textlength(label, font=f)
         if cx + tw + 44 > 760:
             cx, y = x, y + 70
