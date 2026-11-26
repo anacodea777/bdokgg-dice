@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="dice_word">ছক্কা</string>
+    <string name="roll">রোল করুন</string>
+    <string name="rolling_short">রোল হচ্ছে…</string>
+    <string name="rolling">ছক্কা গড়াচ্ছে…</string>
+    <string name="hint">রোল-এ চাপুন, ছক্কায় ট্যাপ করুন বা ফোন ঝাঁকান</string>
+    <string name="total">মোট</string>
+    <string name="single_die">একটি ছক্কা</string>
+    <plurals name="dice_count">
+        <item quantity="one">%d টি ছক্কা</item>
+        <item quantity="other">%d টি ছক্কা</item>
+    </plurals>
+    <string name="history">রোলের ইতিহাস</string>
+    <string name="history_empty">এখনও কোনো রোল নেই</string>
+    <string name="sound_on">শব্দ চালু করুন</string>
+    <string name="sound_off">শব্দ বন্ধ করুন</string>
+    <string name="shake">ঝাঁকিয়ে রোল করুন</string>
+    <string name="clear_history">ইতিহাস মুছুন</string>
+    <string name="language">ভাষা</string>
+    <string name="cd_fewer">কম ছক্কা</string>
+    <string name="cd_more">বেশি ছক্কা</string>
+    <string name="cd_dice">ছক্কায় দেখাচ্ছে %1$s। রোল করতে ট্যাপ করুন।</string>
+</resources>

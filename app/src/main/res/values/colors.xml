@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Taken from the BDOKGG logo: black, orange and white. -->
+    <color name="brand_orange">#FF9000</color>
+    <color name="brand_orange_dark">#C76E00</color>
+    <color name="brand_black">#0A0A0A</color>
+    <color name="surface">#171717</color>
+    <color name="surface_line">#2C2C2C</color>
+    <color name="text_primary">#FFFFFF</color>
+    <color name="text_secondary">#B3B3B3</color>
+    <color name="ic_launcher_background">#000000</color>
+</resources>

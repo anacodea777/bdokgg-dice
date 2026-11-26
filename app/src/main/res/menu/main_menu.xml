@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/action_sound"
+        android:icon="@drawable/ic_volume_on"
+        android:title="@string/sound_off"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/action_shake"
+        android:checkable="true"
+        android:title="@string/shake"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_language"
+        android:title="@string/language"
+        app:showAsAction="never">
+        <menu>
+            <group android:checkableBehavior="single">
+                <!-- Language names are shown in their own language on purpose. -->
+                <item
+                    android:id="@+id/lang_en"
+                    android:title="@string/lang_english" />
+                <item
+                    android:id="@+id/lang_bn"
+                    android:title="@string/lang_bengali" />
+            </group>
+        </menu>
+    </item>
+
+    <item
+        android:id="@+id/action_clear"
+        android:title="@string/clear_history"
+        app:showAsAction="never" />
+</menu>

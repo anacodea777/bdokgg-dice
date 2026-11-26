@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name" translatable="false">BDOKGG Dice</string>
+    <string name="dice_word">Dice</string>
+    <string name="roll">ROLL</string>
+    <string name="rolling_short">ROLLING…</string>
+    <string name="rolling">The dice are rolling…</string>
+    <string name="hint">Tap ROLL, tap the dice or shake your phone</string>
+    <string name="total">Total</string>
+    <string name="single_die">One die</string>
+    <string name="dash" translatable="false">–</string>
+    <plurals name="dice_count">
+        <item quantity="one">%d die</item>
+        <item quantity="other">%d dice</item>
+    </plurals>
+    <string name="history">ROLL HISTORY</string>
+    <string name="history_empty">No rolls yet</string>
+    <string name="sound_on">Turn sound on</string>
+    <string name="sound_off">Turn sound off</string>
+    <string name="shake">Shake to roll</string>
+    <string name="clear_history">Clear history</string>
+    <string name="language">Language</string>
+    <string name="lang_english" translatable="false">English</string>
+    <string name="lang_bengali" translatable="false">বাংলা (Bengali)</string>
+    <string name="cd_fewer">Fewer dice</string>
+    <string name="cd_more">More dice</string>
+    <string name="cd_dice">Dice showing %1$s. Tap to roll.</string>
+</resources>
